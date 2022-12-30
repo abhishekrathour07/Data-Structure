@@ -86,7 +86,7 @@ void delete_last()
     {
         p = p->next;
     }
-    q = q->next;
+    q = head;
     while (q->next->next != NULL)
     {
         q = q->next;

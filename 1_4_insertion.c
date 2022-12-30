@@ -10,7 +10,7 @@ int main(){
     }
     while (1){
         printf("enter your choice\n"
-               "1. watsapp\n2. last\n3. at array possition\n 4. display\n5. exit\n");
+               "1. At Beginning\n2. last\n3. at array possition\n 4. display\n5. exit\n");
         scanf("%d", &choice);
        
         switch (choice){
