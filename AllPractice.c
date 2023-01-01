@@ -1,42 +1,71 @@
 #include<stdio.h>
-
-void main(){
-    int a[20],i,x,pos,choice,n;
-    printf("Enter the size of array");
-    scanf("%d",&n);
-    printf("Enter the element in the array");
-    for(i=0;i<n;i++){
-        scanf("%d",&a[i]);
+struct queue{
+    int Q[2][10];
+    int rear ,front ;
+}q;
+int queuefull(){
+    if (q.rear ==9){
+        return 1; 
     }
-    while(1){
-        printf("Enter your choice\n 1.insert \n 2.insert last \n3.display\n 4.exit\n");
-        scanf("%d",&choice);
-        switch(choice){
-            case 1:
-            printf("Enter the data");
-            scanf("%d",&x);
-            for(i=(n-1);i>0;i--){
-                a[i+1]=a[i];
-            }
-            a[0]=x;
-            n=n+1;
-            break;
-            case 2:
-            printf("Enter your choice\n");
-            scanf("%d",&x);
-            a[n-1] =x;
-            n =n+1;
-            break;
-            case 3:
-            for(i=0;i<n;i++){
-                printf("%d\t",a[i]);
-            }
-            break;
-            case 4:
-            exit(1);
-            break;
-            default :
-            printf("ENter the correct choice");
+    else 
+    return 0;
+}
+int queueempty(){
+   if(q.rear==-1 && q.front ==-1){
+    return 1;
+   }
+   else{
+    return 0;
+   }
+}
+void inqueue(){
+    int i,x,p;
+    i=queuefull();
+    if (i==0){
+        q.rear++;
+        printf("Enterthe data");
+        scanf("%d",&x);
+        q.Q[0][q.rear] =x;
+        printf("Enter the priority");
+        scanf("%d",&p);
+        q.Q[1][q.rear]=p;
+        if(q.rear ==0){
+            q.front = q.rear;
         }
     }
+    else 
+    printf("queue is full");
 }
+void dequeue(){
+    int i,x,p,j,k,t1,t2;
+    i= queueempty();
+    if(k==0){
+        for(i=q.front ;i<q.rear;i++){
+            for(j=q.front+1;i<q.rear;i++){
+                if(q.Q[1][i]>q.Q[1][j]){
+                    t1= q.Q[0][i];
+                    t2 =q.Q[1][i];
+                    q.Q[0][i] =q.Q[0][j];
+                    q.Q[1][i] =q.Q[1][j];
+                    q.Q[0][j] =t1;
+                    q.Q[1][j] =t2;
+                }
+            }
+        }
+        x=q.Q[0][q.front];
+        p=q.Q[1][q.front];
+        printf("Deleted data =%d",x);
+        printf("with priority %d",p);
+        q.front++;
+        if(q.front >q.rear){
+            q.front =q.rear =-1;
+        }
+    }else
+    printf("queue is empty");
+}
+
+void main(){
+
+}
+    
+           
