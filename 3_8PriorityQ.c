@@ -54,7 +54,7 @@ void PQ_dequeue(){
                     t2 = q.Q[0][i];
                      q.Q[1][i] = q.Q[1][j];
                      q.Q[0][i] = q.Q[0][j];
-                     q.Q[1][j] =t2;
+                     q.Q[1][j] =t1;
                      q.Q[0][j] =t2;
                 }
             }

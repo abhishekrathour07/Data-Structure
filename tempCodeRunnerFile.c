@@ -1,2 +1,1 @@
-gotoxy(10,20);
-    printf("created by abhishek");
+ // Beep(1200, 500);

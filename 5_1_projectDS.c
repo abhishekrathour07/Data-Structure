@@ -18,11 +18,15 @@ void yellow()
 {
     printf("\033[1;33m");
 }
+void cyan()
+{
+    printf("\033[1;36m");
+}
 
 // blue colour of text
-void blue()
+void purple()
 {
-    printf("\033[1;34m");
+    printf("\033[1;35m");
 }
 // for white
 void white()
@@ -35,16 +39,16 @@ int load()
     int i;
     while (1)
     {
-        blue();
+        cyan();
         printf("LOADING\t");
         for (i = 0; i < 3; i++)
         {
             red();
-            Beep(1200, 500);
+            Beep(3700, 500);
 
             printf(">>");
 
-            Beep(1200, 500);
+            Beep(3000, 500);
         }
         system("cls"); // for clearing the terminal screen
         break;
@@ -77,7 +81,7 @@ void push()
     }
     else
     {
-        white();
+        green();
         p = (stack *)malloc(sizeof(stack));
         printf("\nEnter the data");
         scanf("%d", &p->data);
@@ -87,7 +91,7 @@ void push()
 }
 void pop()
 {
-    red();
+    purple();
     int i;
     stack *p;
     i = stackEmpty();
@@ -95,25 +99,27 @@ void pop()
     {
         p = top;
         top = top->next;
-        printf("\nDeleted element is %d\n", p->data);
+        printf("\n\nDeleted element is %d\n", p->data);
         free(p);
     }
     else
     {
         red();
-        printf("stack is empty");
+        printf("\n\nstack is empty\n");
     }
 }
 void display()
 {
     stack *p;
     p = top;
+    printf("\n\n");
     while (p != NULL)
     {
-        green();
+       purple();
         printf("\n%d\t", p->data);
         p = p->next;
     }
+    printf("\n\n");
 }
 
 void main()
@@ -126,11 +132,12 @@ void main()
         number = rand();
         white();
         printf("\nEnter the captcha code\n");
+        cyan();
         printf("%d\n", number);
+        white();
         printf("Enter here :");
         scanf("%d", &guess);
         if (guess == number){
-        blue();
         green();
             printf("\n**login successfully**\n");
         }
@@ -144,11 +151,11 @@ void main()
     top = NULL;
     while (1)
     {
-        green();
+        cyan();
         printf("\n=============== STACK USING SINGLE LINKED LIST ===============\n");
         white();
-        printf("\nChoose any option\n 1.Push \n 2.pop \n 3.display \n 4.exit \n");
-        green();
+        printf("\nCHOOSE ANY OPTION\n 1.PUSH \n 2.POP \n 3.DISPLAY \n 4.EXIT \n");
+        cyan();
         printf("\n===============================================================\n");
         white();
         printf("Enter your choice:-");
@@ -171,6 +178,11 @@ void main()
             printf("THANK YOU FOR VISITING ON LINKRD LIST\n");
             load();
             exit(1);
+            break;
+            default:
+            red();
+            printf("ERROR !!\n");
+            printf("\nENTER THE CORRECT CHOICE\n");
             break;
         }
     }

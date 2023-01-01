@@ -1,6 +1,6 @@
 #include<stdio.h>
-#include<conio.h>
 #include<stdlib.h>
+#include<windows.h>
 void red()
 {
     printf("\033[1;31m");
@@ -16,6 +16,17 @@ void yellow()
 {
     printf("\033[1;33m");
 }
+
+
+void purple()
+{
+    printf("\033[1;35m");
+}
+void cyan()
+{
+    printf("\033[1;36m");
+}
+
 
 // blue colour of text
 void blue()
@@ -58,20 +69,25 @@ node *head;
 //printing the data
 void printing()
 {
+  green();
   node *p;
   p=head;
+  printf("\n\n\n");
   while(p!=NULL)
   {
     printf("%d->",p->data);
     p=p->next;
   }
+  printf("\n");
 }
 //counting data
 void counting()
 {
+  blue();
   int c=0;
   node *p;
   p=head;
+  printf("\n\n\n");
   while(p!=NULL)
   {
    c++;
@@ -82,11 +98,13 @@ void counting()
 //searching the node
 void searching()
 {
+  cyan();
   int x,i=0,c=0;
   node *p;
   p=head;
   printf("Enter the data to be search\n");
   scanf("%d",&x);
+   printf("\n\n\n");
   while(p!=NULL)
   {
     i++;
@@ -99,14 +117,17 @@ void searching()
   }
   if(c==0)
   {
+    red();
    printf("invalid data its not present in the list");
   }
 }
 //INSERTION AT TYHE BEGINNING
 void insertion_at_the_beginning()
 {
+  white();
   node *n;
   n=(node*) malloc(sizeof(node));
+   printf("\n\n\n");
   printf("Enter the data\n");
   scanf("%d",&n->data);
   n->next=NULL;
@@ -116,6 +137,7 @@ void insertion_at_the_beginning()
 //INSERTION AT LAST
 void insertion_at_last()
 {
+  blue();
  node *p,*n;
  n=(node*)malloc(sizeof(node));
  printf("Enter the data");
@@ -131,6 +153,7 @@ p->next=n;
 //INSERTION AT ANY PO9STION
 void insertion_at_any_position()
 {
+  yellow();
   int pos,i;
   node *n,*p;
   n=(node*)malloc(sizeof(node));
@@ -159,7 +182,7 @@ void deletion_at_front()
 //VOID DELETION AT THE LAST
 void deletion_at_last()
 {
-  
+  red();
   node *p,*q;
   p=head;
   while(p->next!=NULL)
@@ -177,6 +200,7 @@ void deletion_at_last()
 //VOID DELETION_AT_ANY_POSITION
 void deletion_at_any_position()
 {
+  red();
   node *p,*q;
   int pos,i;
   p=head;
@@ -192,6 +216,7 @@ void deletion_at_any_position()
  }
  void sorting()
  {
+  cyan();
     node *p, *q;
     int t;
     p = head;
@@ -213,6 +238,7 @@ void deletion_at_any_position()
 }
 void concat()
 {
+  green();
     node *head1, *p;
     int n, i;
     printf("Enter the no.of nodes ");
@@ -242,6 +268,7 @@ void merging()
 }
 void split()
 {
+  white();
     node *p, *head1;
     int pos, i;
     printf("Enter position to split ");
@@ -274,12 +301,11 @@ void main()
  {
    int n,i,ch;
    node *p;
-  
+  purple();
    printf("Enter the number of node\n");
    scanf("%d",&n);
-
    head=(node*)malloc(sizeof(node));
-   printf("Enter the data inside the node");
+   printf("Enter the data inside the node: ");
    scanf("%d",&head->data);
    head->next=NULL;
    p=head;
@@ -287,59 +313,77 @@ void main()
    {
      p->next=(node*)malloc(sizeof(node));
      p=p->next;
-     printf("Enter the dat inside the node");
+     printf("Enter the data inside the node: ");
      scanf("%d",&p->data);
      p->next=NULL;
    }
    while(1)
    {
-     printf("\nEnter your choice\n1:printing\n2:counting\n3:searching\n4:insertion_at_beginning\n5:insertion_at_last\n6:insertion_at_any_position\n7:deletion_at_begging\n8:deletion_at_last\n9:deletion_at_any_position\n10:sorting\n11:concat\n12:merge\n13:spliting\n14:exit\n");
-     
+       white();printf("\n============  "); cyan();printf("LINKED LIST"); white();printf("  =============="); 
+     printf("\nCHOOSE ANY OPTION\n1:PRINTING\n2:COUNTING\n3:SEARCHING\n4:INSERTION AT BEGINNING\n5:INSERTION AT LAST\n6:INSERTION AT ANY POSITION\n7:DELETION AT BEGINNING\n8:DELETION AT LAST\n9:DELETION AT ANY POSITION\n10:SORTING\n11:CONCATINATION\n12:MERGING\n13:SPILITING\n14:EXIT\n");
+     printf("=========================================\n");
+     printf("Enter your choice:");
      scanf("%d",&ch);
      switch(ch)
      {
        case 1:
+       load();
 	      printing();
 	      break;
        case 2:
+       load();
 	       counting();
 	       break;
        case 3:
+       load();
 	       searching();
 	       break;
        case 4:
+        load();
 	      insertion_at_the_beginning();
-
 	       break;
-
        case 5:
+        load();
 	      insertion_at_last();
 	      break;
        case 6:
+        load();
 	      insertion_at_any_position();
 	      break;
        case 7:
+        load();
 	       deletion_at_front();
 	       break;
        case 8:
+        load();
 	       deletion_at_last();
 	       break;
        case 9:
+        load();
 	       deletion_at_any_position();
 	       break;
        case 10:
+        load();
 	      	sorting();
 		     break;
        case 11:
+        load();
              concat();
              break;
        case 12:
+        load();
              merging();
              break;
        case 13:
+        load();
                split();
                break;
-       case 14: exit(1);
+
+       case 14: 
+       cyan();
+       printf("=== EXITING LINKED LIST ===\n");
+        load();
+        exit(1);
                 break;       
        default:     
 	       printf("Enter correct choice\n");
