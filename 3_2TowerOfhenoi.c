@@ -1,4 +1,3 @@
-// program of tower of henoi
 #include<stdio.h>
 
 void towerofhenoi(int n,char A,char B, char C){
