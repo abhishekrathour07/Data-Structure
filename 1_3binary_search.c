@@ -2,7 +2,7 @@
 
 void main()
 {
-    int a[50], i, size, data, l = 0, r, mid;
+    int a[50], i, size, data, l, r, mid;
 
     printf("Enter the size of the array");
     scanf("%d", &size);
@@ -13,10 +13,10 @@ void main()
     }
     printf("Enter the elements to be searched\n");
     scanf("%d", &data);
-
-    while (l < r)
-    {
+        l=0;
         r = size - 1;
+    while (l <= r)
+    {
         mid = (l + r) / 2;
         if (data < a[mid])
             r = mid - 1;
