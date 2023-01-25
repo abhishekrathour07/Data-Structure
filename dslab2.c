@@ -1,3 +1,4 @@
+// Ques number 2
 #include<stdio.h>
 
 void main(){

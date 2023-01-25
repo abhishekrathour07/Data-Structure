@@ -1,35 +1,31 @@
 #include <stdio.h>
-
-void main()
+int main()
 {
-    int a[50], i, size, data, l, r, mid;
-
-    printf("Enter the size of the array");
-    scanf("%d", &size);
-    printf("Enter the array element \n");
-    for (i = 0; i < size; i++)
+    int c, first, last, middle, n, search, array[100];
+    printf("Enter number of elements\n");
+    scanf("%d", &n);
+    printf("Enter %d integers\n", n);
+    for (c = 0; c < n; c++)
+        scanf("%d", &array[c]);
+    printf("Enter value to find\n");
+    scanf("%d", &search);
+    first = 0;
+    last = n - 1;
+    middle = (first + last) / 2;
+    while (first <= last)
     {
-        scanf("%d", &a[i]);
-    }
-    printf("Enter the elements to be searched\n");
-    scanf("%d", &data);
-        l=0;
-        r = size - 1;
-    while (l <= r)
-    {
-        mid = (l + r) / 2;
-        if (data < a[mid])
-            r = mid - 1;
-        else if (data > a[mid])
-            l = mid + 1;
-        else if (data == a[mid])
-        {   
-            printf("%d Element is found at location %d", data, mid+1);
+        if (array[middle] < search)
+            first = middle + 1;
+        else if (array[middle] == search)
+        {
+            printf("%d found at location %d.\n", search, middle + 1);
             break;
         }
-        if (l > r)
-        {
-            printf("%d Element not found in the list\n", data);
-        }
+        else
+            last = middle - 1;
+        middle = (first + last) / 2;
     }
+    if (first > last)
+        printf("Not found! %d isn't present in the list.\n", search);
+    return 0;
 }
