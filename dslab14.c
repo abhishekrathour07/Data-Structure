@@ -13,7 +13,7 @@ struct node {
 void inorderTraversal(struct node* root) {
   if (root == NULL) return;
   inorderTraversal(root->left);
-  printf("%d ->", root->item);
+  printf("%d ->", root->item); 
   inorderTraversal(root->right);
 }
 

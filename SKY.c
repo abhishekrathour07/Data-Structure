@@ -162,7 +162,7 @@ void main()
             if (t == 1)
             {
                 yellow();
-                printf("The Matrix is\n");
+                printf("MATRIX 1:\n");
                 for (i = 0; i < 3; i++)
                 {
                     for (j = 0; j < 3; j++)
@@ -171,7 +171,7 @@ void main()
                     }
                     printf("\n");
                 }
-                printf("transpose of matrix is\n");
+                printf("TRANSPOSE OF MATRIX 1:\n");
                 for (i = 0; i < 3; i++)
                 {
                     for (j = 0; j < 3; j++)
@@ -184,7 +184,7 @@ void main()
             else
             {
                 yellow();
-                printf("the Matrix is\n");
+                printf("MATRIX 2:\n");
                 for (i = 0; i < 3; i++)
                 {
                     for (j = 0; j < 3; j++)
@@ -193,7 +193,7 @@ void main()
                     }
                     printf("\n");
                 }
-                printf("transpose of matrix is\n");
+                printf("TRANSPOSE OF MTRIX 2:\n");
                 for (i = 0; i < 3; i++)
                 {
                     for (j = 0; j < 3; j++)
@@ -218,11 +218,12 @@ void main()
             }
             break;
         case 7:
-            printf("PLEASE WAIT......");
+            printf("******* PLEASE WAIT ********\n");
             load();
             exit(1);
             break;
         default:
+        cyan();
             printf("ENTER THE CORRECT CHOICE");
             break;
         }

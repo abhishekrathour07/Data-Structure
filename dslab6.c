@@ -57,7 +57,7 @@
             x=q.Q[q.front];
             printf("Deleted value is %d",x);
             q.front=(q.front+1)%10;
-            if(q.front==((q.rear+1)%10))
+            if(q.front==((q.rear+1)%10)) 
             {
                 q.front=-1;
                 q.rear=-1;

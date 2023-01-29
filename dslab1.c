@@ -5,7 +5,7 @@
 void main()
 {
     int search, i, j, size, c, choice, temp;
-    int first, last, middle;
+    int count,first,last,middle;
     int a[] = {4, 7, 3, 2, 1, 7, 9, 0};
     while (1)
     {
@@ -30,26 +30,28 @@ void main()
             }
             break;
         case 2:
-            for (i = 0; i < 8; i++)
-            {
-                temp = a[i];
-                j = i - 1;
-                while (j >= 0 && a[j] > temp)
-                {
-                    a[j + 1] = a[j];
-                    j--;
-                }
-                a[j + 1] = temp;
+        // using bubble sort for sorting element
+ for(i=0;i<7;i++){
+        count =0; //avoiding unwanted pass
+        for(j=0;j<7-i;j++){ //n-1-i because avoiding the unnessessary  step during passes.
+            if(a[j]>a[j+1]){
+                int temp =a[j];
+                a[j] =a[j+1];
+                a[j+1] = temp;
+               count=1;
             }
-            printf("Insertion sort are :\n");
-            for (i = 0; i < 8; i++)
-            {
-                printf("%3d", a[i]);
-            }
-            printf("Enter value to find\n");
+        }
+        if(count==0){
+            break;
+        }
+      }
+      for(i=0;i<8;i++){
+        printf("%3d",a[i]);
+      }
+            printf("\nEnter value to find\n");
             scanf("%d", &search);
             first = 0;
-            last = size - 1;
+            last = 8- 1;
             middle = (first + last) / 2;
             while (first <= last)
             {
@@ -57,7 +59,7 @@ void main()
                     first = middle + 1;
                 else if (a[middle] == search)
                 {
-                    printf("%d found at location %d.\n", search, middle+1);
+                    printf("%d found at location %d.\n", search, middle + 1);
                     break;
                 }
                 else
@@ -70,7 +72,8 @@ void main()
         case 3:
             exit(1);
             break;
+              default:
+              printf("Enter the correct choice\n");
         }
     }
-
 }
