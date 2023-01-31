@@ -4,7 +4,7 @@
 void main()
 {
     int i, j, count, n;
-    int choice, temp, position;
+    int choice, temp;
    int a[] ={75,8,1,16,48,3,7,0};
     while (1)
     {
@@ -13,7 +13,7 @@ void main()
         switch (choice)
         {
         case 1:
-            for (i = 0; i < 8; i++)
+            for (i = 1; i < 8; i++)
             {
                 temp = a[i];
                 j = i - 1;
@@ -26,21 +26,18 @@ void main()
             }
             break;
         case 2:
-            for (i = 0; i < (8 - 1); i++)
+           for (i = 0; i < 8-1; i++)
+    {
+        for (j = i + 1; j < 8; j++)
+        {
+            if (a[i] < a[j])
             {
-                position = i;
-                for (j = i + 1; j < n; j++)
-                {
-                    if (a[position] < a[j])
-                        position = j;
-                }
-                if (position != i)
-                {
-                    temp = a[i];
-                    a[i] = a[position];
-                    a[position] = temp;
-                }
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
             }
+        }
+    }
             break;
         case 3:
             for (i = 0; i < 8; i++)

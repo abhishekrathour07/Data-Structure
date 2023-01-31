@@ -7,6 +7,9 @@ void main()
     int search, i, j, size, c, choice, temp;
     int count,first,last,middle;
     int a[] = {4, 7, 3, 2, 1, 7, 9, 0};
+    for(i=0;i<8;i++){
+        printf("%d\t",a[i]);
+    }
     while (1)
     {
         printf("\nEnter Your choice \n 1.linear search \n 2.Binary search \n 3.Exit\n");
@@ -48,13 +51,13 @@ void main()
       for(i=0;i<8;i++){
         printf("%3d",a[i]);
       }
-            printf("\nEnter value to find\n");
+            printf("  Enter value to find\n");
             scanf("%d", &search);
             first = 0;
             last = 8- 1;
-            middle = (first + last) / 2;
             while (first <= last)
             {
+            middle = (first + last) / 2;
                 if (a[middle] < search)
                     first = middle + 1;
                 else if (a[middle] == search)
@@ -64,7 +67,6 @@ void main()
                 }
                 else
                     last = middle - 1;
-                middle = (first + last) / 2;
             }
             if (first > last)
                 printf("Not found! %d isn't present in the list.\n", search);
