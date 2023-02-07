@@ -1,25 +1,29 @@
-#include <stdio.h>
-int main()
-{
-int array[100], n, c, d, swap;
-printf("Enter number of elements\n");
-scanf("%d", &n);
-printf("Enter %d integers\n", n);
-for (c = 0; c < n; c++)
-scanf("%d", &array[c]);
-for (c = 0 ; c < (n - 1); c++)
-{
-for (d = 0 ; d < (n - c - 1); d++)
-{
-if (array[d] > array[d+1]){
-swap = array[d];
-array[d] = array[d+1];
-array[d+1] = swap;
-}
-}
-}
-printf("Sorted list in ascending order:\n");
-for (c = 0; c < n; c++)
-printf("%d\n", array[c]);
-return 0;
-}
+// Ques number 2
+#include<stdio.h>
+
+void main(){
+    int i,j,count,n,a[20];
+    printf("Enter the size");
+    scanf("%d",&n);
+    printf("Enter the element in the array");
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);                                                                                    
+    }
+      for(i=0;i<n-1;i++){
+        count =0; //avoiding unwanted pass
+        for(j=0;j<n-1-i;j++){ //n-1-i because avoiding the unnessessary  step during passes.
+            if(a[j]>a[j+1]){
+                int temp =a[j];
+                a[j] =a[j+1];
+                a[j+1] = temp;
+               count=1;
+            }
+        }
+        if(count==0){
+            break;
+        }
+      }
+      for(i=0;i<n;i++){
+        printf("%3d",a[i]);
+      }
+      }
