@@ -277,9 +277,10 @@ int main()
             break;
         case 14:
             exit(1);
-            break;
+            break; 
         default:
             printf("Enter correct choice");
+            break;
         }
     }
 }

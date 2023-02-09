@@ -73,18 +73,18 @@ void display()
         p = p->next;
     }
 }
-int gotoxy(int x, int y)
-{
-    COORD c;
-    c.X = x;
-    c.Y = y;
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
-}
-void owner()
-{
-    gotoxy(60, 65);
-    printf("created by abhishek");
-}
+// int gotoxy(int x, int y)
+// {
+//     COORD c;
+//     c.X = x;
+//     c.Y = y;
+//     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+// }
+// void owner()
+// {
+//     gotoxy(60, 65);
+//     printf("created by abhishek");
+// }
 void main()
 {
     int choice;
@@ -108,11 +108,12 @@ void main()
         case 4:
             exit(1);
             break;
-        case 5:
-            owner();
-            break;
+        // case 5:
+        //     owner();
+        //     break;
         default:
             printf("Enter correct choice");
+            break;
         }
     }
 }
