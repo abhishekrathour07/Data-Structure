@@ -56,6 +56,7 @@ void insert_last()
 void insert_pos()
 {
     node *p, *new;
+    p = head;
     int pos, i;
     new = (node *)malloc(sizeof(node));
     printf("Enter the data");
@@ -63,7 +64,6 @@ void insert_pos()
     new->next = NULL;
     printf("Enter the positiion");
     scanf("%d", &pos);
-    p = head;
     for (i = 1; i < (pos - 1); i++)
     {
         p = p->next;
