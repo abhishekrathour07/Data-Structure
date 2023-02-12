@@ -39,7 +39,7 @@ void enqueue()
         rear = rear->next;
         printf("Enter the data");
         scanf("%d", &rear->data);
-        rear->next = NULL;
+        rear->next = NULL; 
         rear->prev = q;
     }
 }

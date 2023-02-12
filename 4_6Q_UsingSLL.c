@@ -4,7 +4,7 @@
 typedef struct queue
 {
     int data;
-    struct queue *next, *prev;
+    struct queue *next;
 } queue;
 queue *rear, *front;
 int queueEmpty()
@@ -32,7 +32,7 @@ void enqueue()
     else
     {
         rear->next = (queue *)malloc(sizeof(queue));
-        rear = rear->next;
+        rear =  rear->next;
         printf("Enter the data");
         scanf("%d", &rear->data);
         rear->next = NULL;

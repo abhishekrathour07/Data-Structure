@@ -38,5 +38,5 @@ void main()
         printf("%d\t", p->data);
         p = p->next;
     }
-    printf("%d", p->data);
+    printf("%d\t", p->data);
 }

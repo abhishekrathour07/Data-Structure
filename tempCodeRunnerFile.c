@@ -1,1 +1,1 @@
- // break;
+printf("%d\t", p->data);
