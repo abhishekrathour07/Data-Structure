@@ -21,12 +21,12 @@ int main()
         case 1:
             printf("enter the data to be inserted  ");
             scanf("%d", &x);
+            n = n + 1; 
             for (i = (n - 1); i >= 0; i--)
             {
                 a[i + 1] = a[i];
             }
             a[0] = x;
-            n = n + 1;
             break;
         case 2:
             printf("enter the data to be inserted  ");

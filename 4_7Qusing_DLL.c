@@ -56,7 +56,7 @@ void dequeue()
         front->prev = NULL;
         free(p);
         if (front == NULL)
-            rear = NULL;
+            rear = NULL; 
     }
     else
     {

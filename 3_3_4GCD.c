@@ -6,7 +6,6 @@ int hcf(int n1, int n2)
     if (n2 == 0)
         return n1;
     else
-    printf("Value of %d and %d\n",n1,n2);
         return hcf(n2, n1 % n2);
 }
 int main()
