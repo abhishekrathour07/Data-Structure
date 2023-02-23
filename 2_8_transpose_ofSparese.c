@@ -34,7 +34,7 @@ void main()
 		}
 		printf("\n");
 	}
-	for (i = 0; i <= p; i++)
+	for (i = 1; i <= p; i++)
 	{
 		t = s[i][0];
 		s[i][0] = s[i][1];
