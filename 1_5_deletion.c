@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include<stdlib.h>
 void main()
 {
     int a[20], i, x, n, pos, ch;

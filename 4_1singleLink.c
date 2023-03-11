@@ -11,7 +11,7 @@ void printing()
 {
     node *p;
     p = head;
-    while (p != NULL)
+    while (p != NULL) 
     {
         printf("%d\t", p->data);
         p = p->next;
@@ -46,7 +46,7 @@ void insert_last()
     new = (node *)malloc(sizeof(node));
     printf("Enter the data");
     scanf("%d", &new->data);
-    new->next = NULL;
+    new->next = NULL; 
     while (p->next != NULL)
     {
         p = p->next;
