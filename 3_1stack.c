@@ -37,7 +37,7 @@ int push()
         s1.top++;
         printf("Enter the value to push");
         scanf("%d", &x);
-        s1.s[s1.top] = x;
+       s1.s[s1.top] = x;
     }
     else
         printf("stack is full");

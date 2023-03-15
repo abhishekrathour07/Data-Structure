@@ -16,7 +16,7 @@ void main(){
             printf("%d is present at %d position",search,i+1);
             c=1;
         }
-    if(c=0){
+    if(c==0){
         printf(" %d Element is not present",search);
     }
     }
