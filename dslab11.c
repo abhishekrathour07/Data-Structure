@@ -68,7 +68,7 @@ void display()
 }
 void main()
 {
-	clrscr();
+	
 	int ch;
 	rear = NULL;
 	front = NULL;

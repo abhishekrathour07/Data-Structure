@@ -1,7 +1,7 @@
 // Lab Manual Question No. 12 Infix to post fix
 
 #include<stdio.h>
-
+#include<ctype.h>
 
 char stack[100];
 int top = -1;

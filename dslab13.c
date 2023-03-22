@@ -1,6 +1,7 @@
 // Lab Manual Ques No. 13 Evaluate postfix Expression
 
 #include<stdio.h>
+#include<ctype.h>
 int stack[20];
 int top = -1;
 

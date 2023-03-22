@@ -4,7 +4,7 @@
 
 void main()
 {
-    int search, i, j, size, c, choice, temp;
+    int search, i, j, size, c=0, choice, temp;
     int count,first,last,middle;
     int a[] = {4, 7, 3, 2, 1, 7, 9, 0};
     for(i=0;i<8;i++){
@@ -26,7 +26,7 @@ void main()
                     printf("%d is present at %d position\n", search, i + 1);
                     c = 1;
                 }
-                if (c = 0)
+                if (c == 0)
                 {
                     printf(" %d Element is not present", search);
                 }
@@ -78,4 +78,5 @@ void main()
               printf("Enter the correct choice\n");
         }
     }
+    
 }
