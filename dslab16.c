@@ -24,7 +24,7 @@ void heapify(int a[], int n, int i)
         heapify(a, n, largest);  
     }  
 }  
-/Function to implement the heap sort/  
+//Function to implement the heap sort/  
 void heapSort(int a[], int n)  
 {  
     for (int i = n / 2 - 1; i >= 0; i--)  
