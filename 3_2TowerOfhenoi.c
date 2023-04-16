@@ -9,7 +9,7 @@ void towerofhenoi(int n,char A,char B, char C){
         towerofhenoi(n-1,A,C,B); 
         printf("Move the disk from %c to %c\n",A,B);
         towerofhenoi(n-1,C,B,A);
-    } 
+    }  
 }
 int main(){
     int n;
