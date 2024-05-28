@@ -58,7 +58,7 @@ void pop()
 void display()
 {
     int i;
-    for (i = s1.top; i > 0; i--)
+    for (i = s1.top; i >= 0; i--)
     {
         printf("%d\t", s1.s[i]);
     }

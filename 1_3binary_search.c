@@ -1,7 +1,11 @@
 #include <stdio.h>
+#include<time.h>
+#include<unistd.h>
+
 int main()
 {
     int c, first, last, middle, n, search, array[100];
+    clock_t begin, end;
     printf("Enter number of elements\n");
     scanf("%d", &n);
     printf("Enter %d integers\n", n);
@@ -12,6 +16,7 @@ int main()
     first = 0;
     last = n - 1;
     middle = (first + last) / 2;
+   begin = clock();
     while (first <= last)
     {
         middle = (first + last) / 2;
@@ -27,5 +32,8 @@ int main()
     }
     if (first > last)
         printf("Not found! %d isn't present in the list.\n", search);
+
+         end = clock();
+    printf("\n\nTime taken: %lf seconds\n", (double)(end - begin) / CLOCKS_PER_SEC);
     return 0;
 }

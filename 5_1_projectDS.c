@@ -129,7 +129,7 @@ void main()
     {
         load();
         srand(time(0)); //generating different number in every runtime.
-        number = rand();
+        number = rand() ;
         white();
         printf("\nEnter the captcha code\n");
         cyan();
